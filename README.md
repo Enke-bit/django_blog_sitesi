@@ -31,7 +31,6 @@ Bu projeyi çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
 
 İlk olarak, projenizi izole bir sanal ortamda çalıştırmak için sanal bir ortam oluşturun ve aktifleştirin:
 
-```bash
 # Proje dizinine gidin
 cd /path/to/your/project
 
