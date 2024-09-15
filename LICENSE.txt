@@ -1,0 +1,10 @@
+MIT License
+
+Copyright (c) 2024 İbrahim Püsküllü
+
+İzin verilir, ücretsiz olarak, aşağıdaki şartlara tabi olarak:
+
+1. Bu iznin kopyasını her bir yazılımın dağıtımına veya yazılımın ilgili belgelerine ekleyin.
+2. Yazılımın tüm veya bir kısmının değiştirilmesi, yazılımın dağıtımıyla ilgili olarak, tüm bu değişikliklerin orijinal yazılımda açıkça belirtilmiş olması ve değişikliklerin kaynak kodunda da yer alması gerekir.
+
+YAZILIM "OLDUĞU GİBİ" SAĞLANMAKTADIR, HERHANGİ BİR GARANTİ, DOĞRULUK, TİCARİ ELVERİŞLİLİK VEYA BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ İÇERMEMEKTEDİR. YAZILIM KULLANIMINDAN KAYNAKLANAN HERHANGİ BİR ZARAR, HASAR, KAYIP VEYA MASRAFLARDAN YAZILIM SAHİPLERİ SORUMLU DEĞİLDİR.
