@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1>Yeni post</h1>
+        <form action = "" method = "post"> {% csrf_token %} # Bu koduma formu saldiralara karşi korumaya yarar.
+            {{form.as_p}}                                   # Form işlemlerini kaydetmek için bu işlemi yapiyoruz.
+            <input type = "submit" value = "Kaydet"/>
+        </from>
+{% endblock content%}

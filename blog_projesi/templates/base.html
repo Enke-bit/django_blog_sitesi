@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Blog Sitesi{% endblock %}</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="{% url 'home' %}" class="site-title">Django Blog</a>
+        </h1>
+        <nav>
+            <a href="{% url 'post_yeni' %}" class="new-post-link">+ Yeni Post</a>
+            {% if user.is_authenticated %}
+                <p class="welcome-message">Hoşgeldiniz {{ user.username }}</p>
+
+                <!-- Çıkış işlemi POST isteğiyle yapılıyor -->
+                <form method="POST" action="{% url 'logout' %}" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-button">Log Out</button>
+                </form>
+            {% else %}
+                <p class="login-message">Giriş yapamadınız.</p>
+                <a href="{% url 'login' %}" class="login-link">Log In</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        <div class="content-container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+</body>
+</html>

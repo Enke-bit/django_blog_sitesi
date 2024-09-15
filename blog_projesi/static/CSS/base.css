@@ -1,0 +1,96 @@
+@import url(//fonts.googleapis.com/css?family=Lato:100,300,300i,400);
+
+body {
+  box-sizing: border-box;
+  font-family: Lato, Arial, sans-serif;
+  text-align: center;
+  color: #eee;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 1em 0;
+  color: #eee;
+  font-weight: 400;
+  font-size: 2.5rem; /* Font size updated for emphasis */
+  letter-spacing: 2px; /* Reduced letter spacing for better readability */
+}
+
+h4 {
+  margin: 1em 0;
+  color: #eee;
+  font-size: 1.5rem; /* Font size updated for emphasis */
+  font-weight: 300;
+}
+
+button, input[type="submit"], #btn-forgot {
+  display: block;
+  background: #01A4E0;
+  color: #fff;
+  border: 0;
+  padding: 0.8em 1.2em; /* Padding updated for better spacing */
+  font-size: 1rem; /* Font size updated for consistency */
+  border-radius: 4px; /* Border radius for rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+  margin-top: 1em; /* Margin for spacing between elements */
+}
+
+button:hover, #btn-login:hover {
+  background: #2184AC;
+}
+
+input {
+    display: block;
+    width: 90%; /* Updated width for better alignment */
+    height: 2.5em; /* Height updated for consistency */
+    margin-top: 1em;
+    padding: 0.5em;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Border radius for rounded corners */
+    color: #333; /* Text color for better readability */
+    background-color: #fff; /* Background color for input fields */
+}
+
+small {
+  display: block;
+  margin-top: 2em;
+  color: #fff;
+  font-size: 0.9rem; /* Font size updated for consistency */
+}
+
+.login-box {
+    padding: 2em; /* Increased padding for better spacing */
+    margin: auto;
+    text-align: center;
+    background-color: #6f92dc;
+    width: 90%; /* Updated width for responsiveness */
+    max-width: 400px; /* Max width for better control */
+    border-radius: 8px; /* Border radius for rounded corners */
+}
+
+.outer-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #6f92dc;
+}
+
+#btn-forgot {
+  background-color: #000D36;
+}
+
+#btn-forgot:hover {
+  background-color: #333;
+}
+
+/* Responsive düzen */
+@media (max-width: 600px) {
+    .login-box {
+        width: 90%;
+    }
+}

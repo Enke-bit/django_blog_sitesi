@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="signup-wrapper">
+        <div class="signup-card">
+            <h2>İbrahim Püsküllü</h2>
+            <h4 class="signup-title">Giriş</h4>
+            <form method="POST" class="signup-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı:</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Kullanıcı Adı">
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre:</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Şifre">
+                </div>
+                <button type="submit" class="btn-submit">Giriş Yap</button>
+                <button type="button" id="btn-forgot">Şifremi Unuttum!</button>
+            </form>
+            <small>İbrahim Püsküllü</small>
+        </div>
+    </div>
+{% endblock content %}

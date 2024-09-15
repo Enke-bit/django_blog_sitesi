@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="signup-wrapper">
+        <div class="signup-card">
+            <h2 class="signup-title">Sign Up</h2>
+            <form method="POST" class="signup-form"> 
+                {% csrf_token %} 
+                {{ form.as_p }} 
+
+                <div class="form-group"> </br>
+                    <label for="password">Parola:</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                    <small class="form-text">Parolanız diğer kişisel bilgileriniz ile çok benzer olamaz. Parolanız en az 8 karakter içermek zorundadır. Parolanız yaygın olarak kullanılan bir parola olamaz. Parolanız tamamıyla sayısal olamaz.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Parola Tabanlı Kimlik Doğrulama:</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="password_auth" checked>
+                            Etkinleştirildi
+                        </label>
+                        <label>
+                            <input type="checkbox" name="password_auth" disabled>
+                            Etkisizleştirildi
+                        </label>
+                    </div>
+                    <small class="form-text">Kimlik doğrulamasını etkileştirmezseniz hesap açamazsınız.</small>
+                </div>
+
+                <button type="submit" class="btn-submit">Kayıt Ol</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

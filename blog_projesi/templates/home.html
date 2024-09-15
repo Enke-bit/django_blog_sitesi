@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <title>İbrahim Püsküllü - Kişisel Web Sitesi</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="İbrahim Püsküllü - Kişisel Web Sitesi">
+    <meta name="keywords" content="ibrahimpuskullu, İbrahim Püsküllü, İBRAHIM, PÜSKÜLLÜ, ibrahimpuskullu.com">
+    <meta name="author" content="İbrahim Püsküllü">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #4C3173; /* Blue Diamond */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .blog-container {
+            padding: 70px 0;
+        }
+
+        .blog-header {
+            background-color: #2dde98; /* Green */
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .blog-card {
+            background-color: #ffffff;
+            color: #555555;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .blog-content {
+            padding: 15px;
+        }
+
+        .blog-title a {
+            color: #4C3173; /* Blue Diamond */
+            text-decoration: none;
+        }
+
+        .blog-title a:hover {
+            text-decoration: underline;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #2dde98; /* Green */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #1a9d6d;
+        }
+
+        .post-date {
+            font-size: 14px;
+            color: #777;
+        }
+
+        footer {
+            background-color: #4C3173; /* Blue Diamond */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer i {
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1><a href="{% url 'home' %}">İbrahim Püsküllü</a></h1>
+    </header>
+
+    <!-- Blog Container -->
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1>Son Blog Yazıları</h1>
+        </div>
+        <div class="blog-grid">
+            {% for post in object_list %}
+                <div class="blog-card">
+                    <img src="{{ post.image_url }}" alt="{{ post.title }}" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            <a href="{% url 'post_detail' post.pk %}" class="blog-link">{{ post.title }}</a>
+                        </h2>
+                        <p class="blog-excerpt">{{ post.body|truncatewords:20 }}</p>
+                        <a href="{% url 'post_detail' post.pk %}" class="read-more-btn">Devamını oku</a>
+                        <p class="post-date">Yayınlanma tarihi: {{ post.published_date|date:"d M Y" }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Tüm Hakları Saklıdır. 2008 - 2024 </br><a href="http://www.ibrahimpuskullu.com">www.ibrahimpuskullu.com</a></p>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-github" aria-hidden="true"></i>
+        <i class="fa fa-skype" aria-hidden="true"></i>
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+    </footer>
+
+</body>
+
+</html>
+{% endblock content %}
